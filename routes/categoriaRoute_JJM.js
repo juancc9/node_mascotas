@@ -1,8 +1,8 @@
 import express from 'express';
-import {listarcategoriasJJM, crearCategoriaJJM, editarCategoriaJJM, buscarCategoriaJJM, eliminarCategoriaJJM} from "../controllers/categoriaController_JJM.js"
+import {listarCategoriaJJM, crearCategoriaJJM, editarCategoriaJJM, buscarCategoriaJJM, eliminarCategoriaJJM} from "../controllers/categoriaController_JJM.js"
 
 const router = express.Router();
-router.get("/categoriasJJM", listarcategoriasJJM);
+router.get("/categoriasJJM", listarCategoriaJJM);
 router.post("/categoriasJJM", crearCategoriaJJM);
 router.get("/categoriasJJM/:id_categoria", buscarCategoriaJJM);
 router.put("/categoriasJJM/:id_categoria", editarCategoriaJJM);

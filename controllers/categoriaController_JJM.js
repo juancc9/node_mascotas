@@ -1,6 +1,6 @@
 import prisma from "../client/prisma.js"; 
 
-export const listarcategoriasJJM = async (req, res) => {
+export const listarCategoriaJJM = async (req, res) => {
   try {
     const categorias = await prisma.categorias.findMany(); 
 

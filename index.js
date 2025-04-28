@@ -14,10 +14,15 @@ app.get('/doc', (req, res) => {
   });
 
     // Categorias
-    import categoriaRouter from "./routes/categoriaRoute_JJM.js";  // Importamos el router
-
-    app.use("/api", categoriaRouter);  // Las rutas de categorías estarán bajo "/api"
-  
+    import categoriaRouter from "./routes/categoriaRoute_JJM.js";  
+    // Razas
+    import razaRouter from "./routes/razaRoute_JJM.js"
+    // Generos
+    import generoRouter from "./routes/generoRoute_JJM.js"
+    
+    app.use("/api", categoriaRouter);  
+    app.use("/api", razaRouter);
+  app.use("/api",generoRouter)
 
 app.use(router)
 app.listen(3000,()=>{
