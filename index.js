@@ -13,9 +13,11 @@ app.get('/doc', (req, res) => {
     res.render('documentacion.ejs'); 
   });
 
-  import  listarcategoriasJJM  from "./routes/categoriaRoute_JJM.js";
+    // Categorias
+    import categoriaRouter from "./routes/categoriaRoute_JJM.js";  // Importamos el router
 
-  app.use(listarcategoriasJJM)
+    app.use("/api", categoriaRouter);  // Las rutas de categorías estarán bajo "/api"
+  
 
 app.use(router)
 app.listen(3000,()=>{
