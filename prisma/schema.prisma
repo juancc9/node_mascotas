@@ -19,8 +19,8 @@ model usuarios{
     id     Int    @id @default(autoincrement())
     nombre String @db.VarChar(100)
     email    String @unique @db.VarChar(50)
-    password String @db.VarChar(50)
-    
+    password String @db.VarChar(255)
+
     mascotas mascotas[]
 
 }

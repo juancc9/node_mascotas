@@ -1,4 +1,6 @@
-import prisma from "../client/prisma.js"; 
+import prisma from "../client/prisma.js";
+import bcrypt from 'bcrypt';
+
 
 export const listarUsuarioJJM = async (req, res) => {
   try {
@@ -46,11 +48,14 @@ export const crearUsuarioJJM = async (req, res) => {
       return res.status(400).json({ message: "El nombre, email y password son obligatorios" });
     }
 
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
     const nuevoUsuario = await prisma.usuarios.create({
       data: {
         nombre,
         email,
-        password,
+        password: hashedPassword,
       },
     });
 
@@ -69,6 +74,9 @@ export const editarUsuarioJJM = async (req, res) => {
     if (!id || !nombre || !email || !password) {  
       return res.status(400).json({ message: "El id, nombre, email y password son obligatorios" });
     }
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
 
     const usuarioActualizado = await prisma.usuarios.update({
       where: {
@@ -77,7 +85,7 @@ export const editarUsuarioJJM = async (req, res) => {
       data: {
         nombre,
         email,
-        password,
+        password: hashedPassword,
       },
     });
 
