@@ -1,6 +1,6 @@
 import prisma from "../client/prisma.js"; 
 
-export const listarMascotas = async (req, res) => {
+export const listarMascota = async (req, res) => {
   try {
     const mascotas = await prisma.mascotas.findMany(); 
 
@@ -41,8 +41,8 @@ export const buscarMascota = async (req, res) => {
 
 export const crearMascota = async (req, res) => {
   try {
-    const { nombre, raza_id, categoria_id, foto, genero_id, estado } = req.body;  
-    if (!nombre || !raza_id || !categoria_id || !foto || !genero_id || !estado) {
+    const { nombre, raza_id, categoria_id, foto, genero_id, estado, usuario_id } = req.body;  
+    if (!nombre || !raza_id || !categoria_id || !genero_id || !estado || !usuario_id) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -50,14 +50,15 @@ export const crearMascota = async (req, res) => {
       data: {
         nombre,
         raza_id,
-        categoria_id,
         foto,
+        categoria_id,
         genero_id,
         estado,
+        usuario_id,
       },
     });
 
-    return res.status(201).json(nuevaMascota);  
+    return res.status(201).json({data:nuevaMascota});  
   } catch (error) {
     console.error("Error al crear mascota:", error.stack);
     return res.status(500).json({ message: "Error en el sistema" });
@@ -66,10 +67,10 @@ export const crearMascota = async (req, res) => {
 
 export const editarMascota = async (req, res) => {
   try {
-    const { nombre, raza_id, categoria_id, foto, genero_id, estado } = req.body;  
+    const { nombre, raza_id, categoria_id, foto, genero_id, estado, usuario_id } = req.body;  
     const { id_mascota } = req.params;  
 
-    if (!id_mascota || !nombre || !raza_id || !categoria_id || !foto || !genero_id || !estado) {  
+    if (!nombre || !raza_id || !categoria_id || !genero_id || !estado || !usuario_id) {  
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -80,14 +81,15 @@ export const editarMascota = async (req, res) => {
       data: {
         nombre,
         raza_id,
-        categoria_id,
         foto,
+        categoria_id,
         genero_id,
         estado,
+        usuario_id,
       },
     });
 
-    return res.status(201).json(mascotaActualizada);  
+    return res.status(201).json({ message: "Mascota actualizada exitosamente", data: mascotaActualizada });  
   } catch (error) {
     console.error("Error al editar mascota:", error.stack);
     return res.status(500).json({ message: "Error en el sistema" });

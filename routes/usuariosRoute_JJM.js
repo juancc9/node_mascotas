@@ -1,5 +1,5 @@
 import express from "express";
-import { listarUsuarioJJM, buscarUsuarioJJM, crearUsuarioJJM, editarUsuarioJJM, eliminarUsuarioJJM } from "../controllers/usuariosController_JJM";
+import { listarUsuarioJJM, buscarUsuarioJJM, crearUsuarioJJM, editarUsuarioJJM, eliminarUsuarioJJM } from "../controllers/usuariosController_JJM.js";
  
 const router  = express.Router()
 router.get("/usuariosJJM", listarUsuarioJJM)

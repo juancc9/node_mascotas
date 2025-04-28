@@ -20,10 +20,9 @@ model usuarios{
     nombre String @db.VarChar(100)
     email    String @unique @db.VarChar(50)
     password String @db.VarChar(50)
-    mascota_id  Int
-    fk_mascota mascotas? @relation(fields: [mascota_id], references: [id_mascota])
-
     
+    mascotas mascotas[]
+
 }
 
 model raza{
@@ -61,10 +60,11 @@ model mascotas{
   foto String @db.VarChar(64)
   genero_id Int
   estado Estado @default(Disponible)
+  usuario_id Int
   fk_genero generos? @relation(fields:[genero_id], references: [id_genero])
   fk_raza raza? @relation(fields:[raza_id], references: [id_raza])
   fk_categoria categorias? @relation(fields:[categoria_id], references: [id_categoria])
+  fk_usuario usuarios? @relation(fields: [usuario_id], references: [id])
 
-  usuarios usuarios[]
 
 }

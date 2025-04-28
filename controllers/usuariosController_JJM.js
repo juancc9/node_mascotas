@@ -41,7 +41,7 @@ export const buscarUsuarioJJM = async (req, res) => {
 
 export const crearUsuarioJJM = async (req, res) => {
   try {
-    const { nombre, email, password, mascota_id } = req.body;  
+    const { nombre, email, password } = req.body;  
     if (!nombre || !email || !password) {
       return res.status(400).json({ message: "El nombre, email y password son obligatorios" });
     }
@@ -51,7 +51,6 @@ export const crearUsuarioJJM = async (req, res) => {
         nombre,
         email,
         password,
-        mascota_id,
       },
     });
 
@@ -64,7 +63,7 @@ export const crearUsuarioJJM = async (req, res) => {
 
 export const editarUsuarioJJM = async (req, res) => {
   try {
-    const { nombre, email, password, mascota_id } = req.body;  
+    const { nombre, email, password,  } = req.body;  
     const { id } = req.params;  
 
     if (!id || !nombre || !email || !password) {  
@@ -79,7 +78,6 @@ export const editarUsuarioJJM = async (req, res) => {
         nombre,
         email,
         password,
-        mascota_id,
       },
     });
 

@@ -19,10 +19,16 @@ app.get('/doc', (req, res) => {
     import razaRouter from "./routes/razaRoute_JJM.js"
     // Generos
     import generoRouter from "./routes/generoRoute_JJM.js"
-    
+    // usuarios
+    import usuariosRouter from "./routes/usuariosRoute_JJM.js"
+    // Mascotas
+    import mascotasRouter from "./routes/mascotaRoute_JJM.js"
+
     app.use("/api", categoriaRouter);  
     app.use("/api", razaRouter);
-  app.use("/api",generoRouter)
+    app.use("/api",generoRouter);
+    app.use("/api",usuariosRouter)
+    app.use("/api", mascotasRouter);
 
 app.use(router)
 app.listen(3000,()=>{
