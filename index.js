@@ -13,6 +13,8 @@ app.get('/doc', (req, res) => {
     res.render('documentacion.ejs'); 
   });
 
+    // Autenticacion
+    import authRouter from "./routes/autenticacionRoute_JJM.js"
     // Categorias
     import categoriaRouter from "./routes/categoriaRoute_JJM.js";  
     // Razas
@@ -24,6 +26,7 @@ app.get('/doc', (req, res) => {
     // Mascotas
     import mascotasRouter from "./routes/mascotaRoute_JJM.js"
 
+    app.use("/api",authRouter)
     app.use("/api", categoriaRouter);  
     app.use("/api", razaRouter);
     app.use("/api",generoRouter);
