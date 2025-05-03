@@ -43,7 +43,8 @@ export const buscarCategoriaJJM = async (req, res) => {
 
 export const crearCategoriaJJM = async (req, res) => {
   try {
-    const { nombre } = req.body;  
+    console.log(req.body) 
+    const { nombre } = req.body; 
     if (!nombre) {
       return res.status(400).json({ message: "El nombre de la categoría es obligatorio" });
     }

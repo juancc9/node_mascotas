@@ -46,6 +46,13 @@ export const crearGenero = async (req, res) => {
       return res.status(400).json({ message: "El nombre del género es obligatorio" });
     }
 
+    // Verificar cuántos géneros existen actualmente
+    const totalGeneros = await prisma.generos.count();
+    if (totalGeneros >= 2) {
+      return res.status(400).json({ message: "Ya existen los 2 géneros permitidos" });
+    }
+
+
     const nuevoGenero = await prisma.generos.create({
       data: {
         nombre,

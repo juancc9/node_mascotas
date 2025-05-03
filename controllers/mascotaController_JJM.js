@@ -9,7 +9,6 @@ const storage=multer.diskStorage({
         cb(null,img.originalname);
     }
 });
-
 const upload=multer({storage:storage});
 export const cargarImagen=upload.single('foto');
 
@@ -54,31 +53,34 @@ export const buscarMascota = async (req, res) => {
 };
 
 export const crearMascota = async (req, res) => {
+  console.log(req.body) 
   try {
-    const { nombre, raza_id, categoria_id, foto, genero_id, estado, usuario_id } = req.body;  
+    const { nombre, raza_id, categoria_id, genero_id, estado, usuario_id } = req.body;
+
     if (!nombre || !raza_id || !categoria_id || !genero_id || !estado || !usuario_id) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
+    const foto = req.file ? req.file.path : null; 
+
     const nuevaMascota = await prisma.mascotas.create({
       data: {
         nombre,
-        raza_id,
+        raza_id: parseInt(raza_id), 
         foto,
-        categoria_id,
-        genero_id,
+        categoria_id: parseInt(categoria_id),
+        genero_id: parseInt(genero_id),
         estado,
-        usuario_id,
+        usuario_id: parseInt(usuario_id),
       },
     });
 
-    return res.status(201).json({data:nuevaMascota});  
+    return res.status(201).json({ data: nuevaMascota });
   } catch (error) {
     console.error("Error al crear mascota:", error.stack);
     return res.status(500).json({ message: "Error en el sistema" });
   }
 };
-
 export const editarMascota = async (req, res) => {
   try {
     const { nombre, raza_id, categoria_id, foto, genero_id, estado, usuario_id } = req.body;  
