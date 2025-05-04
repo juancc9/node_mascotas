@@ -1,10 +1,18 @@
 import bodyParser from "body-parser";
 import express from "express";
+import cors from 'cors'; 
 const router = express.Router(); 
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors({    
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true
+    }));
 
 // DOCUMENTACION
 
@@ -32,6 +40,9 @@ app.get('/doc', (req, res) => {
     app.use("/api",generoRouter);
     app.use("/api",usuariosRouter)
     app.use("/api", mascotasRouter);
+
+
+    
 
 app.use(router)
 app.listen(3000,()=>{
