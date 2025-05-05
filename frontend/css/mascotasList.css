@@ -4,11 +4,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
-  body {
-    font-size: 1rem; 
-    background-color: rgb(17, 17, 63);
-
-  }
+ 
 
 
   .formulario {
@@ -83,7 +79,7 @@ h2{
 }
 
 #mascotList{
-  background-color: rgba(79, 55, 214, 0.952);
+  background-color: rgba(79, 55, 214, 0);
   padding: 8px;
   border-radius: 16px;
   border: none;
@@ -99,7 +95,7 @@ h2{
 
 #buttonAdd{
     color:aliceblue;
-    background-color: rgb(4, 185, 79);
+    background-color: rgb(49, 175, 123);
     padding: 8px;
     border-radius: 16px;
     border: none;
@@ -108,4 +104,6 @@ h2{
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: large;
     font-weight: bolder;
+    cursor: pointer;
+
 }

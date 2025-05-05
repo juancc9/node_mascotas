@@ -2,6 +2,10 @@ const RedirectAddicionar=()=>{
   window.location="adicionar.html"
 }
 
+const RedirectMain=()=>{
+  window.location="main.html"
+}
+
 window.addEventListener("DOMContentLoaded", async () => {
     try {
       const response = await fetch("http://localhost:3000/api/mascotasJJM/");
@@ -10,8 +14,9 @@ window.addEventListener("DOMContentLoaded", async () => {
       const contenedor = document.getElementById("listaMascotas");
 
       mascotas.forEach((mascota) => {
+        
         const h1 = document.createElement("h2");
-        h1.textContent = `Nombre: ${mascota.nombre}, Raza ID: ${mascota.raza_id}, Estado: ${mascota.estado}`;
+        h1.textContent = `  Nombre: ${mascota.nombre}`;
         contenedor.appendChild(h1);
       });
     } catch (error) {
