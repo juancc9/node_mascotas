@@ -55,9 +55,9 @@ export const buscarMascota = async (req, res) => {
 export const crearMascota = async (req, res) => {
   console.log(req.body) 
   try {
-    const { nombre, raza_id, categoria_id, genero_id, estado, usuario_id } = req.body;
+    const { nombre,  categoria_id, genero_id, estado, usuario_id } = req.body;
 
-    if (!nombre || !raza_id || !categoria_id || !genero_id || !estado || !usuario_id) {
+    if (!nombre ||  !categoria_id || !genero_id || !estado || !usuario_id) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -66,7 +66,7 @@ export const crearMascota = async (req, res) => {
     const nuevaMascota = await prisma.mascotas.create({
       data: {
         nombre,
-        raza_id: parseInt(raza_id), 
+        // raza_id: parseInt(raza_id), 
         foto,
         categoria_id: parseInt(categoria_id),
         genero_id: parseInt(genero_id),
