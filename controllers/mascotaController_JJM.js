@@ -15,7 +15,14 @@ export const cargarImagen=upload.single('foto');
 
 export const listarMascota = async (req, res) => {
   try {
-    const mascotas = await prisma.mascotas.findMany(); 
+    const mascotas = await prisma.mascotas.findMany({
+      include: {
+        fk_raza: true,        // Incluye datos de la tabla `raza`
+        fk_categoria: true,   // Incluye datos de la tabla `categoria`
+        fk_genero: true,      // Incluye datos de la tabla `genero`
+        fk_usuario: true      // Incluye datos de la tabla `usuarios`
+      },
+    });
 
     return mascotas.length > 0
       ? res.status(200).json(mascotas)

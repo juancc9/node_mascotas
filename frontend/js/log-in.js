@@ -3,10 +3,11 @@ document.getElementById("loginForm").addEventListener("submit", async function (
   
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    //  alert("00q")
+    // alert("Login Exi")
     try {
-      const response = await fetch("http://localhost:3000/api/loginJJM", {
-        method: "POST",
+      const host = window.location.hostname === "localhost" ? "localhost" : "192.168.1.106";
+      const response = await fetch(`http://${host}:3000/api/loginJJM`, {
+              method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -17,7 +18,6 @@ document.getElementById("loginForm").addEventListener("submit", async function (
   
       if (response.ok) {
         localStorage.setItem("token", data.token);
-        document.getElementById("mensaje").innerText = "Login exitoso";
         window.location.href = "main.html"; 
       } else {
         document.getElementById("mensaje").innerText = data.message;

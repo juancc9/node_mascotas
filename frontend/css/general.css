@@ -1,9 +1,4 @@
-#screen {
-    width: 350px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
+
   body {
     font-size: 1rem; 
     background-color: rgb(47, 48, 138);
@@ -25,9 +20,9 @@
   
 
   .contenedor {
-    position: relative;
     text-align: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 600px;
     left: 40%;
@@ -91,7 +86,7 @@ select{
   }
 
 #mensaje{
-    color: rgba(252, 66, 66, 0);
+    color: rgb(255, 0, 0);
     text-align: center;
 }
 
@@ -143,3 +138,4 @@ h2{
   top: 4%;
   left: 40%;
 }
+
