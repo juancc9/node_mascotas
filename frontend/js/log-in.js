@@ -5,10 +5,12 @@ document.getElementById("loginForm").addEventListener("submit", async function (
     const password = document.getElementById("password").value;
     // alert("Login Exi")
     try {
-      const host = window.location.hostname === "localhost" ? "localhost" : "192.168.1.106";
-      const response = await fetch(`http://${host}:3000/api/loginJJM`, {
-              method: "POST",
-        headers: {
+      const host = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+      ? "localhost"
+      : "192.168.1.106"; 
+  
+    const response = await fetch(`http://${host}:3000/api/loginJJM`, {
+      method: "POST",        headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
