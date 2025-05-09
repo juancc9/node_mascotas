@@ -8,10 +8,8 @@ const RedirectMain=()=>{
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const host = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-    ? "localhost"
-    : "192.168.1.106"; 
-  const response = await fetch(`http://${host}:3000/api/mascotasJJM/`);
+   
+  const response = await fetch(`http://10.4.20.36:3000/api/mascotasJJM/`);
     
     const mascotas = await response.json();
 
