@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Mascotas</title>
   <link rel="stylesheet" href="../css/JJM_general.css" />
+  <link rel="stylesheet" href="../css/JJM_adiccionar.css"/>
 </head>
 <body>
     <img src="../assets//btn-back.svg" type="submit" onclick="RedirectMain()" width="1%" />
+<h1 class="titulo">Adicionar mascota</h1>
 
-    <div class="contenedor">
-        <h1>Adicionar mascota</h1>
-    <img src="../assets/photo-lg-0.svg" width="35%"  class="fondo">   
+        <div class="contenedor-foto">
+            <br>
+    <img src="../assets/photo-lg-0.svg" width="10%" id="foto"  > 
+        </div>  
+      <div class="formulario-Add">
     <input type="text" placeholder="Nombre" id="nombre"  class="input1"   required />
     <select name="Raza" id="raza"></select>
     <select name="Categoria" id=""></select>
     <input type="text" placeholder="Subir foto" id="foto"  class="input1"   required />
     <select name="Genero" id=""></select>
-    <img src="../assets//btn-save.svg" type="submit" width="85%"/>
-
+    <img src="../assets//btn-save.svg" type="submit" width="65%"/>
+</div>
 </div> 
 <script src="../js/JJM_mascotas.js"></script>
 </body>

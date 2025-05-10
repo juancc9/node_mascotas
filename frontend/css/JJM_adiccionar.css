@@ -1,0 +1,53 @@
+.contenedor-foto {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.contenedor-Add {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 500px;
+  width: 90%;
+}
+
+.formulario-Add {
+  text-align: center;
+  flex-direction: column;
+  gap: 100px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 500px;
+  width: 90%;
+}
+.formulario-Add input,
+.formulario-Add select,
+.formulario-Add textarea,
+.formulario-Add button {
+  margin-bottom: 1rem; 
+}
+
+.titulo {
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ✅ Media query para móviles pequeños */
+@media (max-width: 480px) {
+  .contenedor-Add,
+  .formulario-Add {
+    padding: 15px;
+    gap: 8px;
+    width: 95%;
+  }
+
+  .contenedor-foto {
+    margin-top: 0.5rem;
+  }
+}

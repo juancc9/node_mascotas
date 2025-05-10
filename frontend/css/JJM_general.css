@@ -127,7 +127,7 @@ p {
   left: 40%;
 }
 
-/* Media query para pantallas pequeñas (teléfonos) */
+
 @media (max-width: 767px) {
   .formulario, .contenedor {
     position: relative; /* Cambia a relativo para que se ajuste al flujo del documento */
