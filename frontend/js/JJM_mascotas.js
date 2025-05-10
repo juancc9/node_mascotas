@@ -1,3 +1,11 @@
+const sesion = localStorage.getItem("token")
+if(!sesion){
+    //alert("Bienvenido")
+    
+
+  window.location ="index.html"  
+}
+
 const RedirectAddicionar=()=>{
   window.location="adicionar.html"
 }
@@ -9,7 +17,7 @@ const RedirectMain=()=>{
 window.addEventListener("DOMContentLoaded", async () => {
   try {
    
-  const response = await fetch(`http://10.4.20.36:3000/api/mascotasJJM/`);
+const response = await fetch(`http://localhost:3000/api/mascotasJJM/`);
     
     const mascotas = await response.json();
 
