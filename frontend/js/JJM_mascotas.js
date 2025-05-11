@@ -21,38 +21,43 @@ const response = await fetch(`http://localhost:3000/api/mascotasJJM/`);
     const mascotas = await response.json();
 
     const contenedor = document.getElementById("listaMascotas");
+    console.log("Cantidad de mascotas:", mascotas.length);
+    contenedor.innerHTML = "";
 
-    mascotas.forEach((mascota) => {
-      const tarjeta = document.createElement("div");
-      tarjeta.classList.add("tarjeta-mascota");
+mascotas.forEach((mascota) => {
+  const tarjeta = document.createElement("div");
+  tarjeta.classList.add("tarjeta-mascota");
 
-      const h1 = document.createElement("h2");
-      h1.textContent = `Nombre: ${mascota.nombre}`;
+  const h1 = document.createElement("h2");
+  h1.textContent = `${mascota.nombre}`;
 
-      const p = document.createElement("p");
-      p.textContent = `Raza: ${mascota.fk_raza?.nombre || "No especificada"}`;
+  const p = document.createElement("p");
+  p.textContent = `${mascota.fk_raza?.nombre || "No especificada"}`;
 
-      tarjeta.appendChild(h1);
-      tarjeta.appendChild(p);
+  h1.style.margin = "0";
+  p.style.margin = "0";
+  p.style.marginTop = "4px"; 
 
-      contenedor.appendChild(tarjeta);
 
-      const tarjeta2 = document.createElement("div");
-      tarjeta2.classList.add("tarjeta-mascota2");
+  const img = document.createElement("img");
 
-      const h1_2 = document.createElement("h2");
-      h1_2.textContent = `Nombre: ${mascota.nombre}`;
+  
+  const rutaPublica = mascota.foto?.replace(/^public\//, "") || "img/default.jpg";
+  img.src = `/${rutaPublica}`;
+  img.alt = `Foto de ${mascota.nombre}`;
+  img.style.width = "100px"; 
+  img.style.height = "100px";
+  img.style.objectFit = "cover";
 
-      const p_2 = document.createElement("p");
-      p_2.textContent = `Raza: ${mascota.fk_raza?.nombre || "No especificada"}`;
+  const textoContenedor = document.createElement("div");
+  textoContenedor.appendChild(h1);
+  textoContenedor.appendChild(p);
 
-      tarjeta2.appendChild(h1_2);
-      tarjeta2.appendChild(p_2);
-
-      contenedor.appendChild(tarjeta2);
-      contenedor.appendChild(tarjeta2);
-
-    });
+  tarjeta.appendChild(img);
+  tarjeta.appendChild(textoContenedor);
+  contenedor.appendChild(tarjeta);
+  
+});
   } catch (error) {
     console.error("Error al obtener las mascotas:", error);
   }

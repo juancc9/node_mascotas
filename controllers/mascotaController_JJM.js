@@ -17,10 +17,10 @@ export const listarMascota = async (req, res) => {
   try {
     const mascotas = await prisma.mascotas.findMany({
       include: {
-        fk_raza: true,        // Incluye datos de la tabla `raza`
-        fk_categoria: true,   // Incluye datos de la tabla `categoria`
-        fk_genero: true,      // Incluye datos de la tabla `genero`
-        fk_usuario: true      // Incluye datos de la tabla `usuarios`
+        fk_raza: true,        
+        fk_categoria: true,   
+        fk_genero: true,      
+        fk_usuario: true      
       },
     });
 
@@ -90,10 +90,10 @@ export const crearMascota = async (req, res) => {
 };
 export const editarMascota = async (req, res) => {
   try {
-    const { nombre, raza_id, categoria_id, foto, genero_id, estado, usuario_id } = req.body;  
-    const { id_mascota } = req.params;  
+    const { nombre, raza_id, categoria_id, foto, genero_id, estado, usuario_id } = req.body;
+    const { id_mascota } = req.params;
 
-    if (!nombre || !raza_id || !categoria_id || !genero_id || !estado || !usuario_id) {  
+    if (!nombre || !raza_id || !categoria_id || !genero_id || !estado || !usuario_id) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -104,15 +104,15 @@ export const editarMascota = async (req, res) => {
       data: {
         nombre,
         raza_id,
-        foto,
         categoria_id,
         genero_id,
         estado,
         usuario_id,
+        ...(foto && { foto }), 
       },
     });
 
-    return res.status(201).json({ message: "Mascota actualizada exitosamente", data: mascotaActualizada });  
+    return res.status(200).json({ message: "Mascota actualizada exitosamente", data: mascotaActualizada });
   } catch (error) {
     console.error("Error al editar mascota:", error.stack);
     return res.status(500).json({ message: "Error en el sistema" });
