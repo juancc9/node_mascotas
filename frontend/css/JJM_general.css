@@ -160,7 +160,7 @@ input::placeholder{
     margin: 20px auto; /* Centra el formulario */
   }
 
-  .input1, select, .input1Submit, #mascotList, #buttonAdd1 {
+  .input1,.input1Foto, select, .input1Submit, #mascotList, #buttonAdd1 {
     width: 100%; /* Hace que los elementos se adapten al 100% del ancho */
     font-size: 1rem; /* Ajusta el tamaño de fuente */
   }

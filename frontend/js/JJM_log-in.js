@@ -8,11 +8,9 @@ InicioSesion.addEventListener('submit', async (event) => {
   const password = document.getElementById('password').value;
 
   try {
-     const host = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-      ? "localhost"
-      : "192.168.1.106"; 
+     
   
-    const response = await fetch(`http://${host}:3000/api/loginJJM`, {
+    const response = await fetch(`http://localhost:3000/api/loginJJM`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -24,7 +22,7 @@ InicioSesion.addEventListener('submit', async (event) => {
 
     if (response.ok) {
       localStorage.setItem('token', data.token);
-      alert('Bienvenido')
+      alert(' Tu mejor amigo en casa: Bienvenido')
       window.location = "main.html"
     } else{
        document.getElementById("mensaje").innerText = "Contraseña o Correo erroneos ✖️";
