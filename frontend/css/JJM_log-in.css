@@ -19,7 +19,7 @@
 
 .contenedor {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
   display: flex;
@@ -42,6 +42,7 @@ button, input {
 }
 
 .input1 {
+  color: rgb(61, 59, 59);
   background-color: rgba(255, 255, 255, 0.582);
   padding: 8px;
   border-radius: 16px;
@@ -83,7 +84,7 @@ select {
 }
 
 #mensaje {
-  color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 
@@ -127,6 +128,11 @@ p {
   position: absolute;
   top: 4%;
   left: 40%;
+}
+
+input::placeholder{
+    color: rgb(61, 59, 59);
+
 }
 
 /* Media query para pantallas pequeñas (teléfonos) */
