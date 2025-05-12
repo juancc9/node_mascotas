@@ -45,6 +45,8 @@ body {
   right: 30%;
 }
 
+.delete{}
+
 #btnSubirFoto {
   background-image: url(../assets/icon-camera.svg);
   background-color: rgba(255, 255, 255, 0.582);

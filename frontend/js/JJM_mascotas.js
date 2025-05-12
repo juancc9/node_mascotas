@@ -46,6 +46,31 @@ mascotas.forEach((mascota) => {
 
 
   const img = document.createElement("img");
+  
+const img1 = document.createElement("img");
+const img2 = document.createElement("img");
+const img3 = document.createElement("img");
+img1.src = "../assets/btn-delete.svg";
+img2.src = "/img/foto2.jpg";
+img3.src = "/img/foto3.jpg";
+
+[img1, img2, img3].forEach(img => {
+  img.alt = `Foto de ${mascota.nombre}`;
+  img.style.width = "100px";
+  img.style.height = "100px";
+  img.style.objectFit = "cover";
+  img.style.marginRight = "8px";
+});
+
+const contenedorImagenes = document.createElement("div");
+contenedorImagenes.style.display = "flex";
+contenedorImagenes.style.justifyContent = "center";
+contenedorImagenes.style.marginBottom = "8px";
+
+contenedorImagenes.appendChild(img1);
+contenedorImagenes.appendChild(img2);
+contenedorImagenes.appendChild(img3);
+
 
   
   const rutaPublica = mascota.foto?.replace(/^public\//, "") || "img/default.jpg";
@@ -59,9 +84,46 @@ mascotas.forEach((mascota) => {
   textoContenedor.appendChild(h1);
   textoContenedor.appendChild(p);
 
-  tarjeta.appendChild(img);
+    tarjeta.appendChild(img1);
+    tarjeta.appendChild(img);
+
   tarjeta.appendChild(textoContenedor);
   contenedor.appendChild(tarjeta);
+
+
+
+  // FUNCION
+
+img1.addEventListener("click", async () => {
+  const id = img1.dataset.id = mascota.id_mascota;
+;
+  const token = localStorage.getItem("token"); // si usas token
+
+  if (!confirm("¿Seguro que deseas eliminar esta mascota?")) return;
+
+  try {
+    const response = await fetch(`http://localhost:3000/api/mascotasJJM/${id}/`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}` // si tu backend requiere token
+      },
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert("Mascota eliminada correctamente.");
+      location.reload(); 
+    } else {
+      alert("Error: " + result.message);
+    }
+  } catch (error) {
+    console.error("Error al eliminar la mascota:", error);
+    alert("Error en el sistema.");
+  }
+});
+
   
 });
   } catch (error) {
