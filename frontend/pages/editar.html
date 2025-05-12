@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Mascotas</title>
+  <link rel="stylesheet" href="../css/JJM_adiccionar.css"/>
+</head>
+<body>
+
+  <div class="back">
+    <img src="../assets//btn-back.png" type="submit" onclick="RedirectMain()" width="15%" />
+    </div>
+    <div class="close">
+      <img src="../assets//btn-close.svg" type="submit" onclick="RedirectMain()" />
+    </div>
+<h1 class="titulo">editar mascota</h1>
+
+        <div class="contenedor-foto">
+    <img src="../assets/photo-lg-0.svg"    > 
+        </div>  
+
+      <div class="formulario-Add">
+    <input type="text" placeholder="Nombre" id="nombre"  class="input1"   required />
+<select name="Raza" id="raza_id">
+  <option value="">Selecciona una raza</option>
+</select>
+    <select name="Categoria" id="categoria_id"> <option value="" >Selecciona una categoria</option>
+
+</select>
+
+<button type="button" id="btnSubirFoto" >Subir foto</button>
+<input type="file" id="foto" accept="image/*" style="display: none;"placeholder="Subir foto" required  />
+
+    
+    <select name="Genero" id="genero_id"> <option value="">Selecciona un genero</option>
+</select>
+    <input type="text" placeholder="Estado" id="estado"  class="input1"   required />
+
+ <select name="usuario" id="usuario_id"> <option value="" >Selecciona un usuario</option>
+
+
+</select>  
+  <img src="../assets//btn-save.svg" type="submit" id="btnGuardarMascota"/>
+</div>
+
+
+<script src="../js/JJM_editar.js"></script>
+</body>
+</html>

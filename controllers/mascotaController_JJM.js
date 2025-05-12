@@ -36,7 +36,7 @@ export const listarMascota = async (req, res) => {
 
 export const buscarMascota = async (req, res) => {
   try {
-    const { id_mascota } = req.params;  
+    const { id_mascota } = req.params;
 
     if (!id_mascota) {
       return res.status(400).json({ message: "El id de la mascota es obligatorio" });
@@ -44,7 +44,13 @@ export const buscarMascota = async (req, res) => {
 
     const mascota = await prisma.mascotas.findUnique({
       where: {
-        id_mascota: Number(id_mascota),  
+        id_mascota: Number(id_mascota),
+      },
+      include: {
+        fk_raza: true,
+        fk_categoria: true,
+        fk_genero: true,
+        fk_usuario: true,
       },
     });
 
@@ -52,7 +58,7 @@ export const buscarMascota = async (req, res) => {
       return res.status(404).json({ message: "Mascota no encontrada" });
     }
 
-    return res.status(200).json(mascota);  
+    return res.status(200).json(mascota);
   } catch (error) {
     console.error("Error al buscar la mascota:", error.stack);
     return res.status(500).json({ message: "Error en el sistema" });

@@ -9,6 +9,11 @@ const RedirectAddicionar=()=>{
   window.location="adicionar.html"
 }
 
+const RedirectGraf=()=>{
+  window.location="graficas.html"
+}
+
+
 const RedirectMain=()=>{
   window.location="main.html"
 }
@@ -51,20 +56,20 @@ const img1 = document.createElement("img");
 const img2 = document.createElement("img");
 const img3 = document.createElement("img");
 img1.src = "../assets/btn-delete.svg";
-img2.src = "/img/foto2.jpg";
-img3.src = "/img/foto3.jpg";
+img2.src = "../assets/btn-edit.svg";
+img3.src = "../assets/btn-show.svg";
 
 [img1, img2, img3].forEach(img => {
   img.alt = `Foto de ${mascota.nombre}`;
-  img.style.width = "100px";
-  img.style.height = "100px";
+  img.style.width = "60px";
+  img.style.height = "60px";
   img.style.objectFit = "cover";
   img.style.marginRight = "8px";
 });
 
 const contenedorImagenes = document.createElement("div");
 contenedorImagenes.style.display = "flex";
-contenedorImagenes.style.justifyContent = "center";
+contenedorImagenes.style.justifyContent = "right";
 contenedorImagenes.style.marginBottom = "8px";
 
 contenedorImagenes.appendChild(img1);
@@ -85,6 +90,8 @@ contenedorImagenes.appendChild(img3);
   textoContenedor.appendChild(p);
 
     tarjeta.appendChild(img1);
+    tarjeta.appendChild(img2);
+    tarjeta.appendChild(img3);
     tarjeta.appendChild(img);
 
   tarjeta.appendChild(textoContenedor);
@@ -93,6 +100,14 @@ contenedorImagenes.appendChild(img3);
 
 
   // FUNCION
+
+ img2.addEventListener("click", () => {
+  const id = mascota.id_mascota;
+  
+  window.location.href = `editar.html?id=${id}`;
+});
+
+ 
 
 img1.addEventListener("click", async () => {
   const id = img1.dataset.id = mascota.id_mascota;
@@ -129,5 +144,7 @@ img1.addEventListener("click", async () => {
   } catch (error) {
     console.error("Error al obtener las mascotas:", error);
   }
+
+  
 });
   

@@ -76,11 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const selectCategoria = document.getElementById("categoria_id");
         console.log(selectCategoria.value);  
 
-      data.forEach(item => {
-        const option = document.createElement("option");
-        option.value = item.id_categoria; 
-        option.textContent = item.nombre;
-        selectCategoria.appendChild(option);
+        data.forEach(item => {
+          const option = document.createElement("option");
+          option.value = item.id_categoria; 
+          option.textContent = item.nombre;
+          selectCategoria.appendChild(option);
       });
     })
     .catch(error => {

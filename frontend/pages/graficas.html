@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estadísticas de Mascotas</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../css/JJM_general.css">
+  <style>
+    
+
+    canvas {
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cantidad de Mascotas por Estado</h1>
+  <canvas id="graficoEstadoMascotas"></canvas>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const token = localStorage.getItem("token");
+
+      try {
+        const response = await fetch("http://localhost:3000/api/mascotaestadoJJM", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        const data = await response.json();
+        const estados = data.map(item => item.estado);
+        const cantidades = data.map(item => item.cantidad);
+
+        new Chart(document.getElementById("graficoEstadoMascotas"), {
+          type: 'bar',
+          data: {
+            labels: estados,
+            datasets: [{
+              label: "Cantidad de Mascotas",
+              data: cantidades,
+              backgroundColor: ['#4caf50', '#f44336'], 
+              borderRadius: 5
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    return `${context.label}: ${context.raw}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: 'Cantidad'
+                }
+              },
+              x: {
+                title: {
+                  display: true,
+                  text: 'Estado'
+                }
+              }
+            }
+          }
+        });
+
+      } catch (error) {
+        console.error("Error al cargar gráfico:", error);
+        alert("No se pudo cargar la gráfica.");
+      }
+    });
+  </script>
+</body>
+</html>

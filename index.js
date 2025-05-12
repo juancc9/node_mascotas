@@ -33,6 +33,8 @@ app.get('/doc', (req, res) => {
     import usuariosRouter from "./routes/usuariosRoute_JJM.js"
     // Mascotas
     import mascotasRouter from "./routes/mascotaRoute_JJM.js"
+    // Grafica
+    import  cantidadMascotasPorEstado  from "./routes/JJM_GraficasMascotasRoute.js";
 
     app.use("/api",authRouter)
     app.use("/api", categoriaRouter);  
@@ -40,6 +42,7 @@ app.get('/doc', (req, res) => {
     app.use("/api",generoRouter);
     app.use("/api",usuariosRouter)
     app.use("/api", mascotasRouter);
+    app.use("/api",cantidadMascotasPorEstado)
 
 
     
