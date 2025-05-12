@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 try {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(`http://localhost:3000/api/mascotasJJM/`, {
+  const response = await fetch(`http://10.4.20.54:3000/api/mascotasJJM/`, {
     method: "GET",
     headers: {
       "Authorization": `Bearer ${token}`
@@ -61,16 +61,13 @@ img3.src = "../assets/btn-show.svg";
 
 [img1, img2, img3].forEach(img => {
   img.alt = `Foto de ${mascota.nombre}`;
-  img.style.width = "60px";
-  img.style.height = "60px";
-  img.style.objectFit = "cover";
-  img.style.marginRight = "8px";
+  img.style.width = "30px";
+  img.style.height = "30px";
 });
 
 const contenedorImagenes = document.createElement("div");
 contenedorImagenes.style.display = "flex";
-contenedorImagenes.style.justifyContent = "right";
-contenedorImagenes.style.marginBottom = "8px";
+contenedorImagenes.style.justifyContent = "left";
 
 contenedorImagenes.appendChild(img1);
 contenedorImagenes.appendChild(img2);
@@ -117,7 +114,7 @@ img1.addEventListener("click", async () => {
   if (!confirm("¿Seguro que deseas eliminar esta mascota?")) return;
 
   try {
-    const response = await fetch(`http://localhost:3000/api/mascotasJJM/${id}/`, {
+    const response = await fetch(`http://10.4.20.54:3000/api/mascotasJJM/${id}/`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

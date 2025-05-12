@@ -1,26 +1,26 @@
 import prisma from "../client/prisma.js"; 
 import multer from 'multer';
 
-const storage=multer.diskStorage({
-    destination:function(req,img,cb){
-        cb(null,"public/img");
-    },
-    filename: function(req,img,cb){
-        cb(null,img.originalname);
-    }
+const storage = multer.diskStorage({
+  destination: function(req, img, cb) {
+    cb(null, "public/img");
+  },
+  filename: function(req, img, cb) {
+    cb(null, img.originalname);
+  }
 });
-const upload=multer({storage:storage});
-export const cargarImagen=upload.single('foto');
 
+const upload = multer({ storage: storage });
+export const cargarImagen = upload.single('foto');
 
 export const listarMascota = async (req, res) => {
   try {
     const mascotas = await prisma.mascotas.findMany({
       include: {
-        fk_raza: true,        
-        fk_categoria: true,   
-        fk_genero: true,      
-        fk_usuario: true      
+        fk_raza: true,
+        fk_categoria: true,
+        fk_genero: true,
+        fk_usuario: true,
       },
     });
 
@@ -38,8 +38,8 @@ export const buscarMascota = async (req, res) => {
   try {
     const { id_mascota } = req.params;
 
-    if (!id_mascota) {
-      return res.status(400).json({ message: "El id de la mascota es obligatorio" });
+    if (!id_mascota || isNaN(Number(id_mascota))) {
+      return res.status(400).json({ message: "El ID de la mascota es inválido" });
     }
 
     const mascota = await prisma.mascotas.findUnique({
@@ -66,11 +66,10 @@ export const buscarMascota = async (req, res) => {
 };
 
 export const crearMascota = async (req, res) => {
-  console.log(req.body) 
   try {
-    const { nombre,  categoria_id, raza_id,  genero_id, estado, usuario_id } = req.body;
+    const { nombre, categoria_id, raza_id, genero_id, estado, usuario_id } = req.body;
 
-    if (!nombre || !raza_id||  !categoria_id || !genero_id || !estado ) {
+    if (!nombre || !raza_id || !categoria_id || !genero_id || !estado) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -94,6 +93,7 @@ export const crearMascota = async (req, res) => {
     return res.status(500).json({ message: "Error en el sistema" });
   }
 };
+
 export const editarMascota = async (req, res) => {
   try {
     const { nombre, raza_id, categoria_id, foto, genero_id, estado, usuario_id } = req.body;
@@ -129,13 +129,13 @@ export const eliminarMascota = async (req, res) => {
   try {
     const { id_mascota } = req.params;  
 
-    if (!id_mascota) {
-      return res.status(400).json({ message: "El id es obligatorio" });
+    if (!id_mascota || isNaN(Number(id_mascota))) {
+      return res.status(400).json({ message: "El ID de la mascota es inválido" });
     }
 
     const mascotaEliminada = await prisma.mascotas.delete({
       where: {
-        id_mascota: Number(id_mascota),  
+        id_mascota: Number(id_mascota),
       },
     });
 
