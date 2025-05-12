@@ -14,9 +14,15 @@ const RedirectMain=()=>{
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-  try {
-   
-const response = await fetch(`http://localhost:3000/api/mascotasJJM/`);
+try {
+  const token = localStorage.getItem("token");
+
+  const response = await fetch(`http://localhost:3000/api/mascotasJJM/`, {
+    method: "GET",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  });
     
     const mascotas = await response.json();
 

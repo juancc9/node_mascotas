@@ -3,8 +3,8 @@ import {listarCategoriaJJM, crearCategoriaJJM, editarCategoriaJJM, buscarCategor
 import { validarToken } from '../controllers/autenticacionController_JJM.js';
 const router = express.Router();
 router.get("/categoriasJJM" , validarToken, listarCategoriaJJM);
-router.post("/categoriasJJM", crearCategoriaJJM);
-router.get("/categoriasJJM/:id_categoria", buscarCategoriaJJM);
-router.put("/categoriasJJM/:id_categoria", editarCategoriaJJM);
-router.delete("/categoriasJJM/:id_categoria", eliminarCategoriaJJM);
+router.post("/categoriasJJM", validarToken, crearCategoriaJJM);
+router.get("/categoriasJJM/:id_categoria", validarToken, buscarCategoriaJJM);
+router.put("/categoriasJJM/:id_categoria", validarToken, editarCategoriaJJM);
+router.delete("/categoriasJJM/:id_categoria",validarToken, eliminarCategoriaJJM);
 export default router;
