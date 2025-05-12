@@ -45,7 +45,7 @@ body {
   right: 30%;
 }
 
-.input1Foto {
+#btnSubirFoto {
   background-image: url(../assets/icon-camera.svg);
   background-color: rgba(255, 255, 255, 0.582);
    background-repeat: no-repeat;
@@ -54,10 +54,15 @@ body {
   padding: 8px;
   border-radius: 16px;
   border: none;
-  width: 290px;
-  height: 26px;
+  width: 300px;
+  height: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: large;
+  text-align: left;
+  color: rgb(61, 59, 59);
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;
 }
 
 .input1 {

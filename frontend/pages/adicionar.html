@@ -17,7 +17,7 @@
 <h1 class="titulo">Adicionar mascota</h1>
 
         <div class="contenedor-foto">
-    <img src="../assets/photo-lg-0.svg"  id="foto"  > 
+    <img src="../assets/photo-lg-0.svg"    > 
         </div>  
 
       <div class="formulario-Add">
@@ -32,7 +32,11 @@
   <option value="labrador">categoria1</option>
   <option value="pastor">categoria2</option>
 </select>
-    <input type="text" placeholder="Subir foto"   class="input1Foto"   required />
+
+<button type="button" id="btnSubirFoto" >Subir foto</button>
+<input type="file" id="foto" accept="image/*" style="display: none;"placeholder="Subir foto" required  />
+
+    
     <select name="Genero" id=""> <option value="">Selecciona un genero</option>
   <option value="labrador">genero1</option>
   <option value="pastor">genero2</option>
@@ -40,6 +44,6 @@
     <img src="../assets//btn-save.svg" type="submit" />
 </div>
 
-<script src="../js/JJM_mascotas.js"></script>
+<script src="../js/JJM_adiccionar.js"></script>
 </body>
 </html>
