@@ -57,10 +57,10 @@ model mascotas{
   nombre String @db.VarChar(50)
   raza_id Int 
   categoria_id Int
-  foto String @db.VarChar(64)
+  foto String? @db.VarChar(64)
   genero_id Int
   estado Estado @default(Disponible)
-  usuario_id Int
+  usuario_id Int?
   fk_genero generos? @relation(fields:[genero_id], references: [id_genero])
   fk_raza raza? @relation(fields:[raza_id], references: [id_raza])
   fk_categoria categorias? @relation(fields:[categoria_id], references: [id_categoria])

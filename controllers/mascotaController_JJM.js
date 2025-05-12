@@ -64,7 +64,7 @@ export const crearMascota = async (req, res) => {
   try {
     const { nombre,  categoria_id, raza_id,  genero_id, estado, usuario_id } = req.body;
 
-    if (!nombre || !raza_id||  !categoria_id || !genero_id || !estado || !usuario_id) {
+    if (!nombre || !raza_id||  !categoria_id || !genero_id || !estado ) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -78,7 +78,7 @@ export const crearMascota = async (req, res) => {
         categoria_id: parseInt(categoria_id),
         genero_id: parseInt(genero_id),
         estado,
-        usuario_id: parseInt(usuario_id),
+        usuario_id: usuario_id ? parseInt(usuario_id) : null,
       },
     });
 

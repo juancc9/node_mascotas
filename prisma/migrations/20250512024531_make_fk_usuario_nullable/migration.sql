@@ -39,10 +39,10 @@ CREATE TABLE `mascotas` (
     `nombre` VARCHAR(50) NOT NULL,
     `raza_id` INTEGER NOT NULL,
     `categoria_id` INTEGER NOT NULL,
-    `foto` VARCHAR(64) NOT NULL,
+    `foto` VARCHAR(64) NULL,
     `genero_id` INTEGER NOT NULL,
     `estado` ENUM('Disponible', 'Adoptado') NOT NULL DEFAULT 'Disponible',
-    `usuario_id` INTEGER NOT NULL,
+    `usuario_id` INTEGER NULL,
 
     PRIMARY KEY (`id_mascota`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -57,4 +57,4 @@ ALTER TABLE `mascotas` ADD CONSTRAINT `mascotas_raza_id_fkey` FOREIGN KEY (`raza
 ALTER TABLE `mascotas` ADD CONSTRAINT `mascotas_categoria_id_fkey` FOREIGN KEY (`categoria_id`) REFERENCES `categorias`(`id_categoria`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `mascotas` ADD CONSTRAINT `mascotas_usuario_id_fkey` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `mascotas` ADD CONSTRAINT `mascotas_usuario_id_fkey` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;

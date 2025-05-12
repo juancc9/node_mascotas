@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("btnSubirFoto");
   const input = document.getElementById("foto");
@@ -17,3 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const RedirectMain=()=>{
+  window.location="main.html"
+}
