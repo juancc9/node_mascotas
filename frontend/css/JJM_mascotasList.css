@@ -87,6 +87,7 @@ h2, p{
 
 
 
+
 .titulo {
   text-align: center;
   color: white;
@@ -108,4 +109,39 @@ h2, p{
 .tarjeta-mascota div {
   display: flex;
   flex-direction: column;
+}
+
+
+@media (max-width: 768px) {
+  .tarjeta-mascota {
+    flex-direction: row;
+    align-items: center;
+    width: 120%;
+    gap: 1rem;
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  .tarjeta-mascota img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .info-mascota h2,
+  .info-mascota p {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  #listaMascotas {
+    padding: 0 1rem;
+  }
+
+  .contenedor {
+    top: 5%;
+    transform: translate(-50%, -5%);
+    padding: 15px;
+  }
 }

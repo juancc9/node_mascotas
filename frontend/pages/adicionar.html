@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Mascotas</title>
-  <link rel="stylesheet" href="../css/JJM_general.css" />
   <link rel="stylesheet" href="../css/JJM_adiccionar.css"/>
 </head>
 <body>
-    <img src="../assets//btn-back.svg" type="submit" onclick="RedirectMain()" width="1%" />
+
+  <div class="back">
+    <img src="../assets//btn-back.png" type="submit" onclick="RedirectMain()" width="15%" />
+    </div>
+    <div class="close">
+      <img src="../assets//btn-close.svg" type="submit" onclick="RedirectMain()" />
+    </div>
 <h1 class="titulo">Adicionar mascota</h1>
 
         <div class="contenedor-foto">
-            <br>
-    <img src="../assets/photo-lg-0.svg" width="10%" id="foto"  > 
+    <img src="../assets/photo-lg-0.svg"  id="foto"  > 
         </div>  
+
       <div class="formulario-Add">
     <input type="text" placeholder="Nombre" id="nombre"  class="input1"   required />
 <select name="Raza" id="raza">
@@ -27,14 +32,14 @@
   <option value="labrador">categoria1</option>
   <option value="pastor">categoria2</option>
 </select>
-    <input type="text" placeholder="Subir foto" id="foto"  class="input1Foto"   required />
+    <input type="text" placeholder="Subir foto"   class="input1Foto"   required />
     <select name="Genero" id=""> <option value="">Selecciona un genero</option>
   <option value="labrador">genero1</option>
   <option value="pastor">genero2</option>
 </select>
-    <img src="../assets//btn-save.svg" type="submit" width="65%"/>
+    <img src="../assets//btn-save.svg" type="submit" />
 </div>
-</div> 
+
 <script src="../js/JJM_mascotas.js"></script>
 </body>
 </html>
