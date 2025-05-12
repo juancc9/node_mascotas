@@ -1,3 +1,10 @@
+const sesion = localStorage.getItem("token")
+if(!sesion){
+    alert("no estas autenticado")
+
+  window.location ="index.html"  
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");

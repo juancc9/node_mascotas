@@ -1,9 +1,9 @@
-// const sesion = localStorage.getItem("token")
-// if(!sesion){
-    
+const sesion = localStorage.getItem("token")
+if(!sesion){
+    alert("no estas autenticado")
 
-//   window.location ="index.html"  
-// }
+  window.location ="index.html"  
+}
 
 const RedirectAddicionar=()=>{
   window.location="adicionar.html"

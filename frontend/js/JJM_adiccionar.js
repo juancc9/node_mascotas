@@ -1,3 +1,9 @@
+const sesion = localStorage.getItem("token")
+if(!sesion){
+    alert("no estas autenticado")
+
+  window.location ="index.html"  
+}
 
 const RedirectMain=()=>{
   window.location="main.html"
