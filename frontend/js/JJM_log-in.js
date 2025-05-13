@@ -10,7 +10,7 @@ InicioSesion.addEventListener('submit', async (event) => {
   try {
      
   
-    const response = await fetch(`http://10.4.20.54:3000/api/loginJJM`, {
+    const response = await fetch(`http://localhost:3000/api/loginJJM`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ InicioSesion.addEventListener('submit', async (event) => {
       alert(' Tu mejor amigo en casa: Bienvenido')
       window.location = "main.html"
     } else{
-       document.getElementById("mensaje").innerText = "Contraseña o Correo erroneos ✖️";
+       document.getElementById("mensaje").innerText = "Contraseña o Correo Incorrectos ✖️";
     }
   } catch (err) {
     alert('Server ERR_', err)

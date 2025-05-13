@@ -70,3 +70,8 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+#mensaje{
+text-align: center;  
+color: aliceblue;
+}

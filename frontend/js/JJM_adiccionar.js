@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token"); 
 
-  fetch("http://10.4.20.54:3000/api/razaJJM", {
+  fetch("http://localhost:3000/api/razaJJM", {
     method: "GET",
     headers: {
       "Authorization": `Bearer ${token}`
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const categoria_id = document.getElementById("categoria_id");
   console.log(categoria_id.value);
 
-  fetch("http://10.4.20.54:3000/api/categoriasJJM", {
+  fetch("http://localhost:3000/api/categoriasJJM", {
     method: "GET",
     headers: {
       "Authorization": `Bearer ${token}`
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token"); 
 
-  fetch("http://10.4.20.54:3000/api/generoJJM", {
+  fetch("http://localhost:3000/api/generoJJM", {
     method: "GET",
     headers: {
       "Authorization": `Bearer ${token}`
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token"); 
 
-  fetch("http://10.4.20.54:3000/api/usuariosJJM", {
+  fetch("http://localhost:3000/api/usuariosJJM", {
     method: "GET",
     headers: {
       "Authorization": `Bearer ${token}`
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("foto", fotoInput.files[0]);
 
     try {
-      const response = await fetch("http://10.4.20.54:3000/api/mascotasJJM", {
+      const response = await fetch("http://localhost:3000/api/mascotasJJM", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`

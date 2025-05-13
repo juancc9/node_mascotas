@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 try {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(`http://10.4.20.54:3000/api/mascotasJJM/`, {
+  const response = await fetch(`http://localhost:3000/api/mascotasJJM/`, {
     method: "GET",
     headers: {
       "Authorization": `Bearer ${token}`
@@ -50,7 +50,7 @@ mascotas.forEach((mascota) => {
   p.style.marginTop = "4px"; 
 
 
-  const img = document.createElement("img");
+const img = document.createElement("img");
   
 const img1 = document.createElement("img");
 const img2 = document.createElement("img");
@@ -81,10 +81,16 @@ contenedorImagenes.appendChild(img3);
   img.style.width = "100px"; 
   img.style.height = "100px";
   img.style.objectFit = "cover";
+  img2.style.cursor = "pointer";
 
   const textoContenedor = document.createElement("div");
   textoContenedor.appendChild(h1);
   textoContenedor.appendChild(p);
+
+
+  img2.addEventListener("click", () => {
+    window.location.href = `editar.html?id=${mascota.id_mascota}`;
+  });
 
     tarjeta.appendChild(img1);
     tarjeta.appendChild(img2);
@@ -98,13 +104,6 @@ contenedorImagenes.appendChild(img3);
 
   // FUNCION
 
- img2.addEventListener("click", () => {
-  const id = mascota.id_mascota;
-  
-  window.location.href = `editar.html?id=${id}`;
-});
-
- 
 
 img1.addEventListener("click", async () => {
   const id = img1.dataset.id = mascota.id_mascota;
@@ -114,13 +113,21 @@ img1.addEventListener("click", async () => {
   if (!confirm("¿Seguro que deseas eliminar esta mascota?")) return;
 
   try {
-    const response = await fetch(`http://10.4.20.54:3000/api/mascotasJJM/${id}/`, {
+    const response = await fetch(`http://localhost:3000/api/mascotasJJM/${id}/`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}` // si tu backend requiere token
+        "Authorization": `Bearer ${token}` 
       },
-    });
+
+      
+    }
+  
+    
+);
+
+  
+
 
     const result = await response.json();
 
