@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../css/JJM_adiccionar.css"/>
 </head>
 <body>
-
   <div class="back">
     <img src="../assets//btn-back.png" type="submit" onclick="RedirectMain()" width="15%" />
     </div>
@@ -17,7 +16,7 @@
 <h1 class="titulo">Editar mascota</h1>
 
         <div class="contenedor-foto">
-    <img src="../assets/photo-lg-0.svg"    > 
+<img id="preview-img" src="" alt="" style="width: 150px; height: 150px;" />
         </div>  
 
       <div class="formulario-Add">
@@ -36,14 +35,21 @@
     <select name="Genero" id="genero_id"> <option value="">Selecciona un genero</option>
 </select>
 
+<select id="estado" required>
+  <option value="">Selecciona estado</option>
+  <option value="Disponible">Disponible</option>
+  <option value="Adoptado">Adoptado</option>
+</select>
+
+
  <select name="usuario" id="usuario_id"> <option value="" >Selecciona un usuario</option>
-<img id="preview-img" src="" alt="Foto actual" />
 
 </select>  
-  <img src="../assets//btn-save.svg" type="submit" id="btnGuardarMascota"/>
+  <img src="../assets//btn-save.svg" type="submit" id="btnGuardar"/>
 </div>
 
 
 <script src="../js/JJM_editar.js"></script>
+<scritpt src="../js/JJM_mascotas.js"></scritpt>
 </body>
 </html>
