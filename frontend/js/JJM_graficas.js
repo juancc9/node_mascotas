@@ -1,6 +1,6 @@
-const sesion = localStorage.getItem("token")
-if(!sesion){
+// const sesion = localStorage.getItem("token")
+// if(!sesion){
     
 
-  window.location ="index.html"  
-}
+//   window.location ="index.html"  
+// }

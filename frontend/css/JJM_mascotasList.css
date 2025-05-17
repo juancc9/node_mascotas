@@ -167,3 +167,49 @@ h2, p{
     padding: 15px;
   }
 }
+
+
+.back {
+  position: absolute;
+  transform: none;
+  top: 12%;
+  left:-35%;
+  
+}
+
+.close {
+  position: absolute;
+  transform: none;
+  top: 12%;
+  right: -50%;
+}
+@media (max-width: 768px) {
+  .back {
+    top: 2;
+    left: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+   .close {
+    top: 2;
+    right: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .formulario-Add {
+    box-sizing: border-box;
+    width: 100%;          
+  }
+  #foto
+  {
+    margin-top: 5.4rem;     
+    width: 45%;  
+
+  }
+  .titulo{
+    margin-top: 3rem;
+        
+  }
+  
+}

@@ -1,22 +1,11 @@
-const sesion = localStorage.getItem("token")
-if(!sesion){
-    alert("no estas autenticado")
+// const sesion = localStorage.getItem("token")
+// if(!sesion){
+//     alert("no estas autenticado")
 
-  window.location ="index.html"  
-}
-
-const RedirectAddicionar=()=>{
-  window.location="adicionar.html"
-}
-
-const RedirectGraf=()=>{
-  window.location="graficas.html"
-}
+//   window.location ="index.html"  
+// }
 
 
-const RedirectMain=()=>{
-  window.location="main.html"
-}
 
 window.addEventListener("DOMContentLoaded", async () => {
 try {
@@ -91,6 +80,11 @@ contenedorImagenes.appendChild(img3);
   img2.addEventListener("click", () => {
     window.location.href = `editar.html?id=${mascota.id_mascota}`;
   });
+
+  img3.addEventListener("click", () => {
+    window.location.href = `consultar.html?id=${mascota.id_mascota}`;
+  });
+
 
     tarjeta.appendChild(img1);
     tarjeta.appendChild(img2);

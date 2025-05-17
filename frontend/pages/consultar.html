@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Mascotas</title>
+  <link rel="stylesheet" href="../css/JJM_consultar.css"/>
+</head>
+<body>
+  <div class="back">
+    <img src="../assets//btn-back.png" type="submit" onclick="RedirectMain()" width="15%" />
+    </div>
+    <div class="close">
+      <img src="../assets//btn-close.svg" type="submit" onclick="RedirectMain()" />
+    </div>
+<h1 class="titulo">Consultar mascota</h1>
+
+        <div class="contenedor-foto">
+<img id="preview-img" src="" alt="" style="width: 150px; height: 150px;" />
+        </div>  
+
+      <div class="formulario-Add">
+    <input  placeholder="Nombre" id="nombre" class="input2"  disabled required />
+<select disabled name="Raza" id="raza_id">
+  <option value="">Selecciona una raza</option>
+</select>
+    <select disabled name="Categoria" id="categoria_id"> <option value="" >Selecciona una categoria</option>
+
+</select>
+    
+    <select disabled name="Genero" id="genero_id"> <option value="">Selecciona un genero</option>
+</select>
+
+
+ <select disabled name="usuario" id="usuario_id"> <option value=""  value="No editable" disabled  >Selecciona un usuario</option>
+
+</select>  
+</div>
+  <p id="nombre"></p>
+
+
+<script src="../js/JJM_editar.js"></script>
+<scritpt src="../js/JJM_mascotas.js"></scritpt>
+<script src="../js/JJM_Buttons.js"></script>
+</body>
+</html>
