@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa con Leaflet</title>
+
+  <link rel="stylesheet"href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="../css/JJM_mapa.css" />
+  <link rel="stylesheet" href="../css/JJM_sideBar.css" />
+
+</head>
+<body>
+
+   <div id="sidebar-container"></div>
+
+  <div class="contenedor">
+
+          <h1>Mapa</h1>
+<div class="close">
+        <button id="toggleBtn" onclick="toggleSidebar()"></button>
+
+      <img src="../assets//btn-close.svg" type="submit" onclick="RedirectMain()" />
+    </div>
+  <div id="map"></div>
+</div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/JJM_mapa.js"></script>
+  <script src="../js/JJM_ManejoSideBar.js"></script>
+    <script src="../js/JJM_sideBar.js"></script>
+</body>
+</html>
