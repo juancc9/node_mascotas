@@ -34,10 +34,14 @@ mascotas.forEach((mascota) => {
   const p = document.createElement("p");
   p.textContent = `${mascota.fk_raza?.nombre || "No especificada"}`;
 
+  const p_2 = document.createElement("p");
+  p_2.textContent = `${mascota.estado || "No especificada"}`;
+
   h1.style.margin = "0";
   p.style.margin = "0";
   p.style.marginTop = "4px"; 
-
+  p_2.style.margin = "0";
+  p_2.style.marginTop = "4px"; 
 
 const img = document.createElement("img");
   
@@ -75,6 +79,8 @@ contenedorImagenes.appendChild(img3);
   const textoContenedor = document.createElement("div");
   textoContenedor.appendChild(h1);
   textoContenedor.appendChild(p);
+  textoContenedor.appendChild(p_2);
+
 
 
   img2.addEventListener("click", () => {

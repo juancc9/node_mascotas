@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Mascotas</title>
   <link rel="stylesheet" href="../css/JJM_consultar.css"/>
+    <link rel="stylesheet"href="../css/JJM_sideBar.css" />
+
 </head>
 <body>
+    <div id="sidebar-container"></div>
+<button id="toggleBtn" onclick="toggleSidebar()">Abrir Sidebar</button>
+
   <div class="back">
-    <img src="../assets//btn-back.png" type="submit" onclick="RedirectMain()" width="15%" />
     </div>
     <div class="close">
       <img src="../assets//btn-close.svg" type="submit" onclick="RedirectMain()" />
@@ -32,7 +36,7 @@
 </select>
 
 
- <select disabled name="usuario" id="usuario_id"> <option value=""  value="No editable" disabled  >Selecciona un usuario</option>
+ <!-- <select disabled name="usuario" id="usuario_id"> <option value=""  value="No editable" disabled  >Selecciona un usuario</option> -->
 
 </select>  
 </div>
@@ -42,5 +46,7 @@
 <script src="../js/JJM_editar.js"></script>
 <scritpt src="../js/JJM_mascotas.js"></scritpt>
 <script src="../js/JJM_Buttons.js"></script>
+<script src="../js/JJM_sideBar.js"></script>
+<script src="../js/JJM_ManejoSideBar.js"></script>
 </body>
 </html>

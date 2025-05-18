@@ -212,4 +212,9 @@ h2, p{
         
   }
   
+   .contenedor {
+    top: 0%;
+    transform: translate(-50%, -5%);
+    padding: 50px;
+  }
 }

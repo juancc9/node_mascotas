@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Mascotas</title>
   <link rel="stylesheet" href="../css/JJM_adiccionar.css"/>
+  <link rel="stylesheet"href="../css/JJM_sideBar.css" />
+
 </head>
 <body>
+  <div id="sidebar-container"></div>
+<button id="toggleBtn" onclick="toggleSidebar()">Abrir Sidebar</button>
 
-  <div class="back">
-    <img src="../assets//btn-back.png" type="submit" onclick="RedirectMain()" width="15%" />
-    </div>
     <div class="close">
       <img src="../assets//btn-close.svg" type="submit" onclick="RedirectMain()" />
     </div>
@@ -45,6 +46,7 @@
 
 <script src="../js/JJM_adiccionar.js"></script>
 <script src="../js/JJM_Buttons.js"></script>
-
+<script src="../js/JJM_sideBar.js"></script>
+<script src="../js/JJM_ManejoSideBar.js"></script>
 </body>
 </html>

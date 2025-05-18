@@ -1,0 +1,15 @@
+
+    canvas {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .close{
+      position: absolute;
+      top: 14%;
+      right: -10%;
+      }
