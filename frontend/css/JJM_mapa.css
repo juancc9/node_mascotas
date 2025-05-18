@@ -43,10 +43,19 @@ img, video {
   text-align: center;
 }
 
-button, input {
+button {
+position: absolute;
+  transform: none;
+  top: 8%;
+  right: 85%;
   padding: 10px;
   border: none;
   border-radius: 5px;
+  color: blue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+    
 }
 
 .input1 {

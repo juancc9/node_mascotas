@@ -35,6 +35,8 @@ app.get('/doc', (req, res) => {
     import mascotasRouter from "./routes/mascotaRoute_JJM.js"
     // Grafica
     import  cantidadMascotasPorEstado  from "./routes/JJM_GraficasMascotasRoute.js";
+     // Coordenadas
+    import  coordenadasRoute from "./routes/cordenadasRouteJJM.js";
 
     app.use("/api",authRouter)
     app.use("/api", categoriaRouter);  
@@ -43,6 +45,7 @@ app.get('/doc', (req, res) => {
     app.use("/api",usuariosRouter)
     app.use("/api", mascotasRouter);
     app.use("/api",cantidadMascotasPorEstado)
+    app.use("/api",coordenadasRoute)
 
 
     

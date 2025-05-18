@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapa con Leaflet</title>
+  <title>Mapa</title>
 
   <link rel="stylesheet"href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet"href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <link rel="stylesheet" href="../css/JJM_mapa.css" />
   <link rel="stylesheet" href="../css/JJM_sideBar.css" />
 
@@ -17,6 +18,7 @@
   <div class="contenedor">
 
           <h1>Mapa</h1>
+ <button onclick="RedirectCoords()">Ver coordenadas</button>
 <div class="close">
         <button id="toggleBtn" onclick="toggleSidebar()"></button>
 
@@ -25,8 +27,11 @@
   <div id="map"></div>
 </div>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../js/JJM_mapa.js"></script>
+  <script src="../js/JJM_Buttons.js"></script>
   <script src="../js/JJM_ManejoSideBar.js"></script>
     <script src="../js/JJM_sideBar.js"></script>
+ 
 </body>
 </html>

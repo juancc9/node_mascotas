@@ -11,4 +11,6 @@ const RedirectMain=()=>{
   window.location="main.html"
 }
 
-
+const RedirectCoords=()=>{
+  window.location="coordenadas.html"
+}

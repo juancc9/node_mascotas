@@ -180,8 +180,8 @@ h2, p{
 .close {
   position: absolute;
   transform: none;
-  top: 12%;
-  right: -50%;
+  top: 18%;
+  right: -40%;
 }
 @media (max-width: 768px) {
   .back {
