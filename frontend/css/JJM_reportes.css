@@ -1,0 +1,18 @@
+#btnDescargarReporte{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blue;
+    font-size: large;
+    font-weight: bolder;
+}
+
+h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
+}
+
+.close {
+  position: absolute;
+  transform: none;
+  top: 15%;
+  right: -15%;
+}

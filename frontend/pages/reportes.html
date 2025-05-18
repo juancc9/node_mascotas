@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../css/JJM_general.css" />
+    <link rel="stylesheet" href="../css/JJM_reportes.css" />
+    <link rel="stylesheet" href="../css/JJM_sideBar.css" />
+</head>
+<body>
+  <div id="sidebar-container"></div>
+
+  <div class="contenedor">
+    <button id="toggleBtn" onclick="toggleSidebar()"></button>
+<div class="close">
+      <img src="../assets//btn-close.svg" type="submit" onclick="RedirectMain()" />
+    </div>
+    <h1>Area de Reportes</h1>
+    <h3>Elije el reporte que deseas obtener:</h3>
+<select id="tipoReporte">
+  <option value="estado">Mascotas por Estado</option>
+  <option value="categoria">Mascotas por Categoría</option>
+  <option value="completo">Mascotas Registradas (completo)</option>
+</select>
+
+<button id="btnDescargarReporte">Descargar Reporte</button>
+    </div>
+
+    <script src="../js/JJM_reportes.js"></script>
+    <script src="../js/JJM_sideBar.js"></script>
+    <script src="../js/JJM_ManejoSideBar.js"></script>
+    <script src="../js/JJM_Buttons.js"></script>
+</body>
+</html>
