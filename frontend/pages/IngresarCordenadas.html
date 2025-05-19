@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Mascotas</title>
+  <link rel="stylesheet" href="../css/JJM_adiccionarCoordenadas.css"/>
+  <link rel="stylesheet"href="../css/JJM_sideBar.css" />
+
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <button id="toggleBtn" onclick="toggleSidebar()"></button>
+
+    <div class="close">
+      <img src="../assets//btn-close.svg" type="submit" onclick="RedirectCoordenadas()" />
+    </div>
+<h1 class="titulo">Ingresa coordenadas de  mascota</h1>
+
+        <div class="contenedor-foto">
+  <img id="foto_mascota" src=""  style="width: 150px; height: 150px;" />
+
+        </div>  
+
+      <div class="formulario-Add">
+    
+  <p><span id="nombre_mascota">Cargando...</span></p>
+</select>  
+  <label for="latitud"></label>
+  <input type="number" placeholder="Ingresa Latitud"  step="any"class="input1" id="latitud" />
+
+  <label for="longitud"></label>
+  <input type="number" placeholder="Ingresa Longitud" step="any" class="input1" id="longitud" />
+
+  <br><br>
+
+  <img src="../assets//btn-save.svg" type="submit" id="btnGuardarCoord"/>
+</div>
+
+
+<script src="../js/JJM_ingresarCoordenadas.js"></script>
+<scritpt src="../js/JJM_mascotasCoordenadas.js"></scritpt>
+<script src="../js/JJM_Buttons.js"></script>
+<script src="../js/JJM_sideBar.js"></script>
+<script src="../js/JJM_sideBar.js"></script>
+<script src="../js/JJM_ManejoSideBar.js"></script>
+</body>
+</html>

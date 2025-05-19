@@ -14,3 +14,11 @@ const RedirectMain=()=>{
 const RedirectCoords=()=>{
   window.location="coordenadas.html"
 }
+
+const RedirectCoordenadas=()=>{
+  window.location="coordenadas.html"
+}
+
+const RedirectMapa=()=>{
+  window.location="Mapa.html"
+}
